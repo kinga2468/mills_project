@@ -1,11 +1,38 @@
 <!doctype html>
-<title>Proba</title>
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='nowe.css') }}">
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,900' rel='stylesheet' type='text/css'> <!--czcionka Lato-->
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet"> <!--czcionka Shadows Into Light-->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"> <!--czcionka Dancing Script-->
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='nowe.css') }}">
+    <title>Młynek</title>
+</head>
 <body>
-    <h2>Jaki to kolor?</h2>
-    {% if name %}
-        <h1>Hello {{ name }}!</h1>
-    {% else %}
-        <h1>Hello, World!</h1>
-    {% endif %}
+    <header>
+        <h1>Młynek</h1>
+    </header>
+    <div class="main-container">
+        <div class="button_main_page">
+            <div class="text_in_button">
+                <form class="text_in_button" method="post" action="#">
+                    <input type="submit" value="{{ 'Graj' }}" />
+                </form>
+            </div>
+        </div>
+        <div class="button_main_page">
+            <div class="text_in_button">
+                <form class="text_in_button" method="post" action="#">
+                    <input type="submit" value="{{ 'Zasady' }}" />
+                </form>
+            </div>
+        </div>
+        <div class="button_main_page">
+            <form class="text_in_button" method="post" action="#">
+                <input type="submit" value="{{ 'Ranking' }}" />
+            </form>
+        </div>
+    </div>
 </body>
+</html>

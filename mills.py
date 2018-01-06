@@ -3,14 +3,18 @@ from flask import render_template
 
 app = Flask(__name__)
 
-@app.route('/hello/')
-@app.route('/hello/<name>')
+@app.route('/mills')
 def hello(name=None):
-    return render_template('hello.html', name=name)
+    return render_template('proba.html', name=name)
 
-@app.route('/proba')
-def proba():
-    return render_template('proba.html')
+@app.route('/play')
+def play(): pass
+
+@app.route('/rules')
+def rules(): pass
+
+@app.route('/ranking')
+def ranking(): pass
 
 if __name__ == '__main__':
     app.run()
