@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/mills')
 def hello(name=None):
-    return render_template('proba.html', name=name)
+    return render_template('main.html', name=name)
 
 @app.route('/play')
 def play(): pass

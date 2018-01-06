@@ -2,9 +2,11 @@
 body{font-family: 'Lato', sans-serif;
     font-size:1em;
     margin:0;
-    background-image: url('images/tło2.png'); background-repeat: repeat-x;}
-header{color:#FF7DFB; text-align: center; font-family: 'Dancing Script', sans-serif; font-size:3.5em; margin:20px;}
-.button_main_page{margin:20px 0;}
+    background-image: url('images/tło.png'); background-repeat: repeat-x;}
 
-.text_in_button input{display:block; margin:0 auto; padding: 5px; height:100%; width:100%; color:black; background-color:#dddddd;
-    background-repeat: no-repeat; font-family: 'Shadows Into Light', sans-serif; font-size:2.5em; cursor:pointer;}
+header{color:#FF7DFB; text-align: center; font-family: 'Dancing Script', sans-serif; font-size:3.5em; margin:20px;}
+
+.button_main_page{margin:20px 0;}
+.text_in_button {margin:0 auto; height:100%; width:100%; background-color:#eaeaea; border-top: 1px solid #9a9aa0; border-bottom: 1px solid #9a9aa0;}
+.text_in_button a{color:black; font-family: 'Shadows Into Light', sans-serif; font-size:2.5em; text-align:center; display:block;
+    text-decoration: none; padding: 5px}

@@ -16,22 +16,18 @@
     <div class="main-container">
         <div class="button_main_page">
             <div class="text_in_button">
-                <form class="text_in_button" method="post" action="#">
-                    <input type="submit" value="{{ 'Graj' }}" />
-                </form>
+                <a href="{{ url_for('play') }}">{{ 'Graj' }}</a>
             </div>
         </div>
         <div class="button_main_page">
             <div class="text_in_button">
-                <form class="text_in_button" method="post" action="#">
-                    <input type="submit" value="{{ 'Zasady' }}" />
-                </form>
+                <a href="{{ url_for('rules') }}">{{ 'Zasady' }}</a>
             </div>
         </div>
         <div class="button_main_page">
-            <form class="text_in_button" method="post" action="#">
-                <input type="submit" value="{{ 'Ranking' }}" />
-            </form>
+            <div class="text_in_button">
+                <a href="{{ url_for('ranking') }}">{{ 'Ranking' }}</a>
+            </div>
         </div>
     </div>
 </body>
