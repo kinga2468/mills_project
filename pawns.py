@@ -7,9 +7,9 @@ class Pawns():
         self.amount = 9
         self.status = 'free'  #statusy pionków : free, on_board, lost
 
-    def status_checking(self, status):
-        """ """
-        pass
+    #def status_checking(self, status):
+    #    """ """
+    #    pass
 
     #if (self.status == 'free'):
     def adding_pawns(self, field_to):
