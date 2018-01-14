@@ -1,45 +1,73 @@
 *{margin:0; padding:0; }
 body{font-family: 'Lato', sans-serif;
     font-size:1em;
-    margin:0;}
+    margin:0;
+    background-color: #cccccc;}
 .background{background-image: url('images/tło.png'); background-repeat: repeat-x;}
 
-header{color:#FF7DFB; text-align: center; font-family: 'Dancing Script', sans-serif; font-size:3.5em; margin:20px;}
+header{color:#FF7DFB; font-family: 'Dancing Script', sans-serif;  }
+.background header{text-align: center; font-size:3.5em; margin:20px;}
+.body_board header{font-size: 2.0em; color: #FF7DFB; display: inline-block; width:25%;
+    height: 100%; position: relative; bottom:620px;}
+.body_board h1{display: inline-block; width:80%; height: 100px;}
+.body_board .fas {color: #FF7DFB; display: inline-block; width:10%; height: 40px; margin: 0 15px 10px 10px; position: relative; bottom:5px;}
+.center{display: inline-block; width:70%; height:100%; }
 
-.main-container{margin-top:50px;}
+.main-container{margin-top:80px;}
 .button_main_page{margin:20px 0;}
 .text_in_button {margin:0 auto; height:100%; width:100%; background-color:#eaeaea; border-top: 1px solid #9a9aa0; border-bottom: 1px solid #9a9aa0;}
 .text_in_button a{color:black; font-family: 'Shadows Into Light', sans-serif; font-size:2.5em; text-align:center; display:block;
     text-decoration: none; padding: 5px}
 
-.board {width: 600px; height: 600px; background-image: url('images/plansza.png'); background-repeat: no-repeat;
-    background-size: 600px 600px; margin:50px auto 50px;}
-.board_body{background-color: #cccccc; width:100%; height: 100%;}
-/*.right{height: 100%; width:20%; float: left; background-color: yellow;}
-.back{width:100px; height:700px; background-color: red;}*/
+.player{width:100%; height: 80px; background-color: #A9A3FF;}
+.player .name{width:15%; height:40px; background-color: #FBFFD9; display: inline-block; position: relative; bottom:5px; left:120px;}
+.player .name p {text-align: center; font-size: 1.7em; font-family: 'Shadows Into Light', sans-serif; /*border: 2px solid #9a9aa0;*/}
+.player .pawns{display: inline-block;  width:auto; position: relative; left:100px; top: 10px;}
+#e0 {position:relative; left:10px; }
+#e1 {position:relative; left:90px;}
+#e2 {position:relative; left:170px;}
+#e3 {position:relative; left:250px;}
+#e4 {position:relative; left:330px;}
+#e5 {position:relative; left:410px;}
+#e6 {position:relative; left:490px;}
+#e7 {position:relative; left:570px;}
+#e8 {position:relative; left:650px}
 
-.field {  width:80px; height: 80px; display:inline-block; /*background-image: url("images/zielony_pionek3.png");*/ cursor:pointer;}
-#p0{position:relative; top:-18px; left:-17px; }
-#p1{position:relative; top:-18px; left:181px;}
-#p2{position:relative; top:-18px; left:371px; }
-#p3{position:relative; top:77px; left:-172px; }
-#p4{position:relative; top:77px; left:-69px; }
-#p5{position:relative; top:77px; left:28px; }
-#p6{position:relative; top:172px; left:-327px; }
-#p7{position:relative; top:88px; left:263px; }
-#p8{position:relative; top:88px; left:265px; }
-#p9{position:relative; top:177px; left:-184px; }
-#p10{position:relative; top:177px; left:-172px; }
-#p11{position:relative; top:177px; left:-161px; }
-#p12{position:relative; top:177px; left:-67px; }
-#p13{position:relative; top:177px; left:-56px; }
-#p14{position:relative; top:93px; left:537px; }
-#p15{position:relative; top:182px; left:88px; }
-#p16{position:relative; top:182px; left:97px; }
-#p17{position:relative; top:182px; left:99px; }
-#p18{position:relative; top:276px; left:-256px; }
-#p19{position:relative; top:276px; left:-152px; }
-#p20{position:relative; top:276px; left:-56px; }
-#p21{position:relative; top:288px; left:-18px; }
-#p22{position:relative; top:288px; left:180px; }
-#p23{position:relative; top:288px; left:371px; }
+.board {width: 500px; height: 500px; background-image: url('images/plansza2.png'); background-repeat: no-repeat;
+    background-size: 500px 500px; margin:30px auto 0;}
+.board_container{width:100%; height: 560px; margin:0 auto; display: inline-block;}
+
+.field {  width:55px; height: 55px; display:inline-block; background-image: url("images/zielony_pionek3.png"); cursor:pointer;
+    background-repeat: no-repeat; background-size: 55px 55px;}
+.my .field{background-image: url("images/rozowy_pionek3.png");}
+
+#p0{position:relative; top:-8px; left:-9px; }
+#p1{position:relative; top:-8px; left:167px;}
+#p2{position:relative; top:-8px; left:337px; }
+
+#p3{position:relative; top:70px; left:-104px; }
+#p4{position:relative; top:70px; left:-7px; }
+#p5{position:relative; top:70px; left:84px; }
+
+#p6{position:relative; top:149px; left:-200px;}
+#p7{position:relative; top:149px; left:-181px; }
+#p8{position:relative; top:91px; left:296px; }
+
+#p9{position:relative; top:165px; left:-67px;}
+#p10{position:relative; top:165px; left:-46px; }
+#p11{position:relative; top:165px; left:-26px; }
+#p12{position:relative; top:165px; left:64px; }
+#p13{position:relative; top:165px; left:85px; }
+#p14{position:relative; top:165px; left:105px;}
+
+#p15{position:relative; top:238px; left:-258px;}
+#p16{position:relative; top:180px; left:225px; }
+#p17{position:relative; top:180px; left:238px;}
+
+#p18{position:relative; top:258px; left:-46px;}
+#p19{position:relative; top:258px; left:51px;}
+#p20{position:relative; top:258px; left:143px;}
+
+#p21{position:relative; top:337px; left:-299px;}
+#p22{position:relative; top:337px; left:-123px;}
+#p23{position:relative; top:337px; left:47px;}

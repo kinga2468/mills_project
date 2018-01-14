@@ -7,42 +7,78 @@
         <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet"> <!--czcionka Shadows Into Light-->
         <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"> <!--czcionka Dancing Script-->
         <link rel=stylesheet type=text/css href="{{ url_for('static', filename='nowe.css') }}">
+        <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet"> <!--ikonki-->
         <title>Młynek</title>
     </head>
-    <body class = "board_body">
-        <article>
-            <div class ="board">
-                <div class="field" id="p0"></div>
-                <div class="field" id="p1"></div>
-                <div class="field" id="p2"></div>
-                <div class="field" id="p3"></div>
-                <div class="field" id="p4"></div>
-                <div class="field" id="p5"></div>
-                <div class="field" id="p6"></div>
-                <div class="field" id="p7"></div>
-                <div class="field" id="p8"></div>
-                <div class="field" id="p9"></div>
-                <div class="field" id="p10"></div>
-                <div class="field" id="p11"></div>
-                <div class="field" id="p12"></div>
-                <div class="field" id="p13"></div>
-                <div class="field" id="p14"></div>
-                <div class="field" id="p15"></div>
-                <div class="field" id="p16"></div>
-                <div class="field" id="p17"></div>
-                <div class="field" id="p18"></div>
-                <div class="field" id="p19"></div>
-                <div class="field" id="p20"></div>
-                <div class="field" id="p21"></div>
-                <div class="field" id="p22"></div>
-                <div class="field" id="p23"></div>
-            </div>
-        </article>
-        <div class = "right">
-            <div class = "back">
-                {# <a href="{{ url_for('start') }}">{{ 'Powrót' }}</a>#}
-            </div>
+    <div class="body_board">
+        <header>
+            <a title="Wróć do menu" href="{{ url_for('start') }}"><span class="fas fa-arrow-alt-circle-left"></span></a>
+            <h1>Młynek</h1>
+        </header>
+        <div class="center">
+            <article class="player">
+                <div class="name">
+                    <p>Gracz 1</p>
+                </div>
+                <div class = pawns>
+                    <div class="field" id="e8"></div>
+                    <div class="field" id="e7"></div>
+                    <div class="field" id="e6"></div>
+                    <div class="field" id="e5"></div>
+                    <div class="field" id="e4"></div>
+                    <div class="field" id="e3"></div>
+                    <div class="field" id="e2"></div>
+                    <div class="field" id="e1"></div>
+                    <div class="field" id="e0"></div>
+                </div>
+            </article>
+            <article class = "board_container">
+                <div class ="board">
+                    <div class="field" id="p0"></div>
+                    <div class="field" id="p1"></div>
+                    <div class="field" id="p2"></div>
+                    <div class="field" id="p3"></div>
+                    <div class="field" id="p4"></div>
+                    <div class="field" id="p5"></div>
+                    <div class="field" id="p6"></div>
+                    <div class="field" id="p7"></div>
+                    <div class="field" id="p8"></div>
+                    <div class="field" id="p9"></div>
+                    <div class="field" id="p10"></div>
+                    <div class="field" id="p11"></div>
+                    <div class="field" id="p12"></div>
+                    <div class="field" id="p13"></div>
+                    <div class="field" id="p14"></div>
+                    <div class="field" id="p15"></div>
+                    <div class="field" id="p16"></div>
+                    <div class="field" id="p17"></div>
+                    <div class="field" id="p18"></div>
+                    <div class="field" id="p19"></div>
+                    <div class="field" id="p20"></div>
+                    <div class="field" id="p21"></div>
+                    <div class="field" id="p22"></div>
+                    <div class="field" id="p23"></div>
+                </div>
+            </article>
+            <article class="player my">
+                <div class="name">
+                    <p>Gracz 2</p>
+                </div>
+                <div class = pawns>
+                    <div class="field" id="e8"></div>
+                    <div class="field" id="e7"></div>
+                    <div class="field" id="e6"></div>
+                    <div class="field" id="e5"></div>
+                    <div class="field" id="e4"></div>
+                    <div class="field" id="e3"></div>
+                    <div class="field" id="e2"></div>
+                    <div class="field" id="e1"></div>
+                    <div class="field" id="e0"></div>
+                </div>
+            </article>
         </div>
+    </div>
+    <script src="../jquery-3.2.1.min.js"></script>
     <script src="/static/js/jquery.js"></script>
     </body>
 </html>
