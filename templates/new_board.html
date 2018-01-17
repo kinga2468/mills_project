@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block body %}
+        <p>Obecnie gra: {{ current_player.sign }} ze znakiem: {{ current_player.sign }}</p>
+{#        <p>Ilość pionków do dołożenia: {{ current_player.name }}</p>#}
+            {% for nr in board.fields.items() %}
+                {% print(nr) %}
+{#                {% if board.is_field_empty({ 'sign': current_player.sign, 'field_to' : nr }) %}#}
+{#                    <a href="/move/{{ nr }}">{{ board.fields[nr] }}</a>#}
+{#                {% endif %}#}
+            {% endfor %}
+{% endblock %}

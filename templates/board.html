@@ -14,6 +14,14 @@
         <header>
             <a title="Wróć do menu" href="{{ url_for('start') }}"><span class="fas fa-arrow-alt-circle-left"></span></a>
             <h1>Młynek</h1>
+            <form>
+                <p>Z pola: </p>
+				<input title = "move_from" type=text size=8 name=move_from>
+                <p>Na pole: </p>
+                <input title = "move_to" type=text size=8 name=move_to>
+				<a href=# id=process_input><button class='button'>Submit</button></a>
+			</form>
+            <p id=result></p>
         </header>
         <div class="center">
             <article class="player">
@@ -21,15 +29,15 @@
                     <p>Gracz 1</p>
                 </div>
                 <div class = pawns>
-                    <div class="field" id="e8"></div>
-                    <div class="field" id="e7"></div>
-                    <div class="field" id="e6"></div>
-                    <div class="field" id="e5"></div>
-                    <div class="field" id="e4"></div>
-                    <div class="field" id="e3"></div>
-                    <div class="field" id="e2"></div>
-                    <div class="field" id="e1"></div>
-                    <div class="field" id="e0"></div>
+                    <div class="field green" id="e8"></div>
+                    <div class="field green" id="e7"></div>
+                    <div class="field green" id="e6"></div>
+                    <div class="field green" id="e5"></div>
+                    <div class="field green" id="e4"></div>
+                    <div class="field green" id="e3"></div>
+                    <div class="field green" id="e2"></div>
+                    <div class="field green" id="e1"></div>
+                    <div class="field green" id="e0"></div>
                 </div>
             </article>
             <article class = "board_container">
@@ -65,20 +73,44 @@
                     <p>Gracz 2</p>
                 </div>
                 <div class = pawns>
-                    <div class="field" id="e8"></div>
-                    <div class="field" id="e7"></div>
-                    <div class="field" id="e6"></div>
-                    <div class="field" id="e5"></div>
-                    <div class="field" id="e4"></div>
-                    <div class="field" id="e3"></div>
-                    <div class="field" id="e2"></div>
-                    <div class="field" id="e1"></div>
-                    <div class="field" id="e0"></div>
+                    <div class="field pink" id="e8"></div>
+                    <div class="field pink" id="e7"></div>
+                    <div class="field pink" id="e6"></div>
+                    <div class="field pink" id="e5"></div>
+                    <div class="field pink " id="e4"></div>
+                    <div class="field pink" id="e3"></div>
+                    <div class="field pink" id="e2"></div>
+                    <div class="field pink" id="e1"></div>
+                    <div class="field pink" id="e0"></div>
                 </div>
             </article>
         </div>
     </div>
-    <script src="../jquery-3.2.1.min.js"></script>
-    <script src="/static/js/jquery.js"></script>
+    <script src="../static/jquery-3.2.1.min.js"></script>
+
+    <!--<script src="/static/js/jquery.js"></script>-->
     </body>
 </html>
+
+
+
+{#{% extends "header.html" %}#}
+{#{% block body %}#}
+{#	<head>#}
+{#		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>#}
+{#		<script type=text/javascript>#}
+{##}
+{#		</script>#}
+{#	</head>#}
+{##}
+{#	<body>#}
+{#		<div class='container'>#}
+{#		<h3>Welcome! Which is the best programming language of them all?</h3>#}
+{#			<form>#}
+{#				<input type=text size=5 name=proglang>#}
+{#				<a href=# id=process_input><button class='btn btn-default'>Submit</button></a>#}
+{#			</form>#}
+{#		<p id=result></p>#}
+{#		</div>#}
+{#	</body>#}
+{#{% endblock %}#}

@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"> <!--czcionka Dancing Script-->
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='nowe.css') }}">
     <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet"> <!--ikonki-->
-    <script type="text/javascript" src="/static/js/jquery.js"></script>
     <title>Młynek</title>
 </head>
 <body class="background">
@@ -18,17 +17,17 @@
     <div class="main-container">
         <div class="button_main_page">
             <div class="text_in_button">
-                <a href="{{ url_for('play') }}">{{ 'Graj' }}</a>
+                <a href="{{ url_for('play') }}">{{ 'Graj z komputerem' }}</a>
+            </div>
+        </div>
+        <div class="button_main_page">
+            <div class="text_in_button">
+                <a href="{{ url_for('play') }}">{{ 'Graj z znajomym' }}</a>
             </div>
         </div>
         <div class="button_main_page">
             <div class="text_in_button">
                 <a href="{{ url_for('rules') }}">{{ 'Zasady' }}</a>
-            </div>
-        </div>
-        <div class="button_main_page">
-            <div class="text_in_button">
-                <a href="{{ url_for('ranking') }}">{{ 'Ranking' }}</a>
             </div>
         </div>
     </div>
