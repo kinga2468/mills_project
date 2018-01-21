@@ -1,4 +1,3 @@
-from game import Game
 from player import Player
 
 class Board:
@@ -61,13 +60,13 @@ class Board:
             23: [14, 22]
         }
 
-    def take_the_field(self, field_to):
-        self.fields[field_to] = game.current_player.sign
+    def take_the_field(self, sign, field_to):
+        self.fields[field_to] = Player(sign)
     #     # Pawns.amount = Pawns.amount - 1
 
-    def is_field_empty(self, field_to):
+    def is_field_empty(self, sign, field_to):
         if self.fields[field_to] == 'F':
-            self.take_the_field(field_to)
+            self.take_the_field(sign, field_to)
         else:
             return False
 

@@ -5,7 +5,6 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('MILLS_SETTINGS', silent=True)
 
-app.secret_key = 'sd2gfd7HJ5u/HgI.87fg[GYI;JK9su'
 
 @app.route('/mills')
 def start():
@@ -25,7 +24,7 @@ def play():
 @app.route('/add/<nr>')
 def add(nr):
     nr = {'nr': int(nr)}
-    # game = Game()
+
     game.board.take_the_field(game.current_player.sign, nr)
     game.change_player()
     current_player = game.current_player
