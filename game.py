@@ -18,3 +18,15 @@ class Game:
         else:
             self.current_player = self.player1
 
+
+
+
+
+
+
+
+
+
+
+
+

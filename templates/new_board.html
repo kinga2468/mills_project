@@ -1,11 +1,22 @@
 {% extends "base.html" %}
 {% block body %}
-        <p>Obecnie gra: {{ current_player.sign }} ze znakiem: {{ current_player.sign }}</p>
-{#        <p>Ilość pionków do dołożenia: {{ current_player.name }}</p>#}
-            {% for nr in board.fields.items() %}
-                {% print(nr) %}
-{#                {% if board.is_field_empty({ 'sign': current_player.sign, 'field_to' : nr }) %}#}
-{#                    <a href="/move/{{ nr }}">{{ board.fields[nr] }}</a>#}
-{#                {% endif %}#}
-            {% endfor %}
+    <p>Obecnie gra: {{ current_player.sign }} ze znakiem: {{ current_player.sign }}</p>
+{#       <p>Ilość pionków do dołożenia: {{ current_player.name }}</p>#}
+    {{ board.fields.keys() }}
+    <br>
+    {% for nr in board.fields %}
+{#            {% if board.is_field_empty(current_player.sign, nr) %}#}
+        <a href="/add/{{ nr }}"> {{ board.fields[nr] }}</a>
+{#            {% endif %}#}
+    {% endfor %}
+{#    {% for nr in board.fields.values() %}#}
+{#        {% print(nr) %}#}
+{#    {% endfor %}#}
+{#    <form>#}
+{#        <p>Z pola: </p>#}
+{#        <input title = "move_from" type=text size=8 name=move_from>#}
+{#        <p>Na pole: </p>#}
+{#        <input title = "move_to" type=text size=8 name=move_to>#}
+{#        <a href=# id=process_input><button class='button'>Submit</button></a>#}
+{#    </form>#}
 {% endblock %}
