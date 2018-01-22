@@ -60,13 +60,15 @@ class Board:
             23: [14, 22]
         }
 
-    def take_the_field(self, sign, field_to):
-        self.fields[field_to] = Player(sign)
+    def take_the_field(self, color, field_to):
+        if self.is_field_empty(field_to):
+            self.fields[field_to] = Player(color)
     #     # Pawns.amount = Pawns.amount - 1
 
-    def is_field_empty(self, sign, field_to):
+    def is_field_empty(self, field_to):
         if self.fields[field_to] == 'F':
-            self.take_the_field(sign, field_to)
+            return True
+            # self.take_the_field(color, field_to)
         else:
             return False
 

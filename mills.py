@@ -21,16 +21,26 @@ def play():
     # pawns = game.pawns.amount
     return render_template('new_board.html', current_player = current_player, board = board )
 
-@app.route('/add/<nr>')
-def add(nr):
-    nr = {'nr': int(nr)}
+# @app.route('/add/<nr>')
+# def add(nr):
+#     nr = {'nr': int(nr)}
+#
+#     game.board.take_the_field(game.current_player.color, nr)
+#     game.change_player()
+#     current_player = game.current_player
+#     board = game.board
+#
+#     return render_template('new_board.html', current_player = current_player, board = board)
 
-    game.board.take_the_field(game.current_player.sign, nr)
-    game.change_player()
-    current_player = game.current_player
-    board = game.board
+@app.route('/_add_numbers')
+def add_numbers():
+    a = request.args.get('a', 24, type=int)
+    game.board.take_the_field(game.current_player.color, a)
+    # game.change_player()
+    # current_player = game.current_player
+    # board = game.board
 
-    return render_template('new_board.html', current_player = current_player, board = board)
+    return jsonify(result = game.current_player.color)
 
 
 # @app.route('/background_process')

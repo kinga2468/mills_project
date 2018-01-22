@@ -6,8 +6,8 @@ from pawns import Pawns
 class Game:
     def __init__(self):
         self.board = Board()
-        self.player1 = Player('@')
-        self.player2 = Player('*')
+        self.player1 = Player('green')
+        self.player2 = Player('pink')
         self.current_player = random.choice([self.player1, self.player2])
         # self.nr = nr
         # self.pawns = Pawns()

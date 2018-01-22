@@ -1,13 +1,14 @@
 class Player():
     """klasa defuniująca graczy"""
 
-    def __init__(self, sign):
-        self.sign = sign
+    def __init__(self, color):
+        self.color = color
+        # self.pawns = 9
         # self.name = name
-        # self.color = color
 
-    def sign(self):
-        return self.sign
+
+    def color(self):
+        return self.color
 
 
 
