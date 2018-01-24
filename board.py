@@ -86,10 +86,58 @@ class Board:
                 counter = counter + 1
         return counter
 
-
-
-
-
+    def have_mills(self,game):
+        color = game.current_player.color
+        if self.fields[0] == color and self.fields[1] == color and self.fields[2] == color:
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[3] == color and self.fields[4] == color and self.fields[5] == color:
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[6] == color and self.fields[7] == color and self.fields[8] == color:
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[9] == color and self.fields[10] == color and self.fields[11] == color:
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[12] == color and self.fields[13] == color and self.fields[14] == color:
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[15] == color and self.fields[16] == color and self.fields[17] == color:
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[18] == color and self.fields[19] == color and self.fields[20] == color:
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[21] == color and self.fields[22] == color and self.fields[23] == color:
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[0] == color and self.fields[9] == color and self.fields[21] == color:
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[3] == color and self.fields[10] == color and self.fields[18] == color:
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[6] == color and self.fields[11] == color and self.fields[15] == color:
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[1] == color and self.fields[4] == color and self.fields[7] == color:
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[16] == color and self.fields[19] == color and self.fields[22] == color:
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[8] == color and self.fields[12] == color and self.fields[17] == color:
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[5] == color and self.fields[13] == color and self.fields[20] == color:
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[2] == color and self.fields[14] == color and self.fields[23] == color:
+            print("zabierz pionek przeciwnka")
+            return True
+        else:
+            return False
 
 
 

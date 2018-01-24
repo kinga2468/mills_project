@@ -35,14 +35,22 @@ def play():
 @app.route('/add')
 def add():
     a = request.args.get('a', 24, type=int)
-    print("przed ruchem ", game.board.fields)
-    print("przed ruchem ", game.current_player.color)
     if game.board.take_the_field(game.current_player.color, a, game) == True:
         print("ilość pionków playera na plaszy ", game.board.player_pawns_on_board(game))
-        if game.board.player_pawns_on_board(game) == 9:
-            return False
-        else:
+        if game.board.player_pawns_on_board(game) <= 9:
+            # if game.board.have_mills(game):
+            #     print("zabrałam pionek przeciwnika")
+            # else:
+            #     return False
+            current_color = game.current_player.color
             game.change_player()
+        else:
+            print("nie masz więcej pionków")
+            return False
+    else:
+        return False
+
+
         # current_player = game.current_player
     print("zajął pole ", a)
     print("teraz będzie grał ", game.current_player.color)
@@ -50,7 +58,7 @@ def add():
 
     # board = game.board
 
-    return jsonify(result = game.current_player.color)
+    return jsonify(result = current_color)
 
 
 # @app.route('/background_process')

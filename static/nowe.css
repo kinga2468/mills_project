@@ -5,7 +5,7 @@ body{font-family: 'Lato', sans-serif;
     background-color: #cccccc;}
 .background{background-image: url('images/tło.png'); background-repeat: repeat-x;}
 
-header{color:#FF7DFB; font-family: 'Dancing Script', sans-serif; }
+header{color:#FF7DFB; font-family: 'Dancing Script', sans-serif;  margin-left:30px;}
 header form{margin-left: 30px;}
 header p {margin-top:5px;}
 .obecnie_add p{font-size: 1em; margin:5px 10px;}
