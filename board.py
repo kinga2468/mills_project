@@ -1,4 +1,5 @@
 from player import Player
+#from game import Game
 
 class Board:
     def __init__(self):
@@ -60,10 +61,13 @@ class Board:
             23: [14, 22]
         }
 
-    def take_the_field(self, color, field_to):
+    def take_the_field(self, color, field_to, game):
         if self.is_field_empty(field_to):
-            self.fields[field_to] = Player(color)
-    #     # Pawns.amount = Pawns.amount - 1
+
+            self.fields[field_to] = game.current_player.color
+            # zmiana w player_pawn statusu na 'on_board'
+            # Player.pawns.player_pawns[field_to] = 'on_board'
+
 
     def is_field_empty(self, field_to):
         if self.fields[field_to] == 'F':

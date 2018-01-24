@@ -1,46 +1,78 @@
 {% extends "base.html" %}
 {% block body %}
-    <p>Obecnie gra: {{ current_player.color }} </p>
-    <div class ="board">
-        <div class="field" id="p0">0</div>
-        <div class="field" id="p1">1</div>
-        <div class="field" id="p2">2</div>
-        <div class="field" id="p3">3</div>
-        <div class="field" id="p4">4</div>
-        <div class="field" id="p5">5</div>
-        <div class="field" id="p6">6</div>
-        <div class="field" id="p7">7</div>
-        <div class="field" id="p8">8</div>
-        <div class="field" id="p9">9</div>
-        <div class="field" id="p10">10</div>
-        <div class="field" id="p11">11</div>
-        <div class="field" id="p12">12</div>
-        <div class="field" id="p13">13</div>
-        <div class="field" id="p14">14</div>
-        <div class="field" id="p15">15</div>
-        <div class="field" id="p16">16</div>
-        <div class="field" id="p17">17</div>
-        <div class="field" id="p18">18</div>
-        <div class="field" id="p19">19</div>
-        <div class="field" id="p20">20</div>
-        <div class="field" id="p21">21</div>
-        <div class="field" id="p22">22</div>
-        <div class="field" id="p23">23</div>
+    <div class="body_board">
+        <header>
+            <a title="Wróć do menu" href="{{ url_for('start') }}"><span class="fas fa-arrow-alt-circle-left"></span></a>
+            <h1>Młynek</h1>
+            <div class="obecnie_add">
+                <p>Obecnie gra: {{ current_player.color }} i ma {{ current_player.pawns.how_many_free_pawns() }} pionków</p>
+                <h2>Postaw pionek</h2>
+                <p><input type=text size=5 name=a>
+    {#                <span id=result>?</span>#}
+                <p><a href=# id=wyslij><button>Wyślij</button></a>
+            </div>
+        </header>
+        <div class="center">
+            <article class="player">
+                <div class="name">
+                    <p> green </p>
+                </div>
+                <div class = pawns>
+                    <div class="field green" id="e8"></div>
+                    <div class="field green" id="e7"></div>
+                    <div class="field green" id="e6"></div>
+                    <div class="field green" id="e5"></div>
+                    <div class="field green" id="e4"></div>
+                    <div class="field green" id="e3"></div>
+                    <div class="field green" id="e2"></div>
+                    <div class="field green" id="e1"></div>
+                    <div class="field green" id="e0"></div>
+                </div>
+            </article>
+            <article class = "board_container">
+                <div class ="board">
+                    <div class="field" id="p0">0</div>
+                    <div class="field" id="p1">1</div>
+                    <div class="field" id="p2">2</div>
+                    <div class="field" id="p3">3</div>
+                    <div class="field" id="p4">4</div>
+                    <div class="field" id="p5">5</div>
+                    <div class="field" id="p6">6</div>
+                    <div class="field" id="p7">7</div>
+                    <div class="field" id="p8">8</div>
+                    <div class="field" id="p9">9</div>
+                    <div class="field" id="p10">10</div>
+                    <div class="field" id="p11">11</div>
+                    <div class="field" id="p12">12</div>
+                    <div class="field" id="p13">13</div>
+                    <div class="field" id="p14">14</div>
+                    <div class="field" id="p15">15</div>
+                    <div class="field" id="p16">16</div>
+                    <div class="field" id="p17">17</div>
+                    <div class="field" id="p18">18</div>
+                    <div class="field" id="p19">19</div>
+                    <div class="field" id="p20">20</div>
+                    <div class="field" id="p21">21</div>
+                    <div class="field" id="p22">22</div>
+                    <div class="field" id="p23">23</div>
+                </div>
+            </article>
+            <article class="player my">
+                <div class="name">
+                    <p> pink </p>
+                </div>
+                <div class = pawns>
+                    <div class="field pink" id="e8"></div>
+                    <div class="field pink" id="e7"></div>
+                    <div class="field pink" id="e6"></div>
+                    <div class="field pink" id="e5"></div>
+                    <div class="field pink " id="e4"></div>
+                    <div class="field pink" id="e3"></div>
+                    <div class="field pink" id="e2"></div>
+                    <div class="field pink" id="e1"></div>
+                    <div class="field pink" id="e0"></div>
+                </div>
+            </article>
+        </div>
     </div>
-{#    {{ board.fields.values() }}#}
-{#    {% for nr in board.fields.values() %}#}
-{#        {% print(nr) %}#}
-{#    {% endfor %}#}
-{#    <form>#}
-{#        <p>Z pola: </p>#}
-{#        <input title = "move_from" type=text size=8 name=move_from>#}
-{#        <p>Na pole: </p>#}
-{#        <input title = "move_to" type=text size=8 name=move_to>#}
-{#        <span id=result>?</span>#}
-{#        <a href=# id=process_input><button class='button'>Submit</button></a>#}
-{#    </form>#}
-    <h1>jQuery Example</h1>
-    <p><input type=text size=5 name=a>
-{#        <span id=result>?</span>#}
-    <p><a href=# id=calculate><button>Wyślij</button></a>
 {% endblock %}

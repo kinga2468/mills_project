@@ -32,15 +32,18 @@ def play():
 #
 #     return render_template('new_board.html', current_player = current_player, board = board)
 
-@app.route('/_add_numbers')
-def add_numbers():
+@app.route('/add')
+def add():
     a = request.args.get('a', 24, type=int)
-    game.board.take_the_field(game.current_player.color, a)
-    # game.change_player()
+    print(game.board.fields)
+    game.board.take_the_field(game.current_player.color, a, game)
+    print(a)
+    print(game.board.fields)
+    game.change_player()
     # current_player = game.current_player
     # board = game.board
 
-    return jsonify(result = game.current_player.color)
+    return jsonify(result = game.current_player.color, nr = a)
 
 
 # @app.route('/background_process')

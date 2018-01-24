@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
     <title>Młynek</title>
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,900' rel='stylesheet' type='text/css'> <!--czcionka Lato-->
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet"> <!--czcionka Shadows Into Light-->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"> <!--czcionka Dancing Script-->
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='nowe.css') }}">
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet"> <!--ikonki-->
     <script src="../static/jquery-3.2.1.min.js"></script>
 
     <script type=text/javascript>
@@ -11,14 +15,13 @@
     </script>
 
     <script type=text/javascript>
-        var obraz ="url(../images/zielony_pionek4.png)";
         $(function() {
-            $('a#calculate').bind('click', function() {
-                $.getJSON($SCRIPT_ROOT + '/_add_numbers', {
+            $('a#wyslij').bind('click', function() {
+                $.getJSON($SCRIPT_ROOT + '/add', {
                     a: $('input[name="a"]').val()
                  }, function(data) {
                 $('#p1').addClass(data.result);
-            });
+                  });
             return false;
             });
         });
@@ -26,12 +29,9 @@
 
 </head>
 <body>
-    <div class="container">
-        <h1>Mills</h1>
-        {% for message in get_flashed_messages() %}
-            <div class=flash>{{ message }}</div>
-        {% endfor %}
-        {% block body %}{% endblock %}
-        </div>
+    {% for message in get_flashed_messages() %}
+        <div class=flash>{{ message }}</div>
+    {% endfor %}
+    {% block body %}{% endblock %}
 </body>
 </html>
