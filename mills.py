@@ -15,8 +15,8 @@ def start():
 def play():
     global game
     game = Game()
-
     current_player = game.current_player
+    print("zaczyna: ", game.current_player.color)
     board = game.board
     # pawns = game.pawns.amount
     return render_template('new_board.html', current_player = current_player, board = board )
@@ -35,15 +35,22 @@ def play():
 @app.route('/add')
 def add():
     a = request.args.get('a', 24, type=int)
-    print(game.board.fields)
-    game.board.take_the_field(game.current_player.color, a, game)
-    print(a)
-    print(game.board.fields)
-    game.change_player()
-    # current_player = game.current_player
+    print("przed ruchem ", game.board.fields)
+    print("przed ruchem ", game.current_player.color)
+    if game.board.take_the_field(game.current_player.color, a, game) == True:
+        print("ilość pionków playera na plaszy ", game.board.player_pawns_on_board(game))
+        if game.board.player_pawns_on_board(game) == 9:
+            return False
+        else:
+            game.change_player()
+        # current_player = game.current_player
+    print("zajął pole ", a)
+    print("teraz będzie grał ", game.current_player.color)
+    print("plansza wygląda tak ", game.board.fields)
+
     # board = game.board
 
-    return jsonify(result = game.current_player.color, nr = a)
+    return jsonify(result = game.current_player.color)
 
 
 # @app.route('/background_process')

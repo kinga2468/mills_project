@@ -16,11 +16,13 @@
 
     <script type=text/javascript>
         $(function() {
+
             $('a#wyslij').bind('click', function() {
                 $.getJSON($SCRIPT_ROOT + '/add', {
                     a: $('input[name="a"]').val()
                  }, function(data) {
-                $('#p1').addClass(data.result);
+                    var x = $('input[name="a"]').val();
+                    $('#p'+x).addClass(data.result);
                   });
             return false;
             });

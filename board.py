@@ -63,8 +63,10 @@ class Board:
 
     def take_the_field(self, color, field_to, game):
         if self.is_field_empty(field_to):
-
             self.fields[field_to] = game.current_player.color
+            return True
+        else:
+            return False
             # zmiana w player_pawn statusu na 'on_board'
             # Player.pawns.player_pawns[field_to] = 'on_board'
 
@@ -77,7 +79,12 @@ class Board:
             return False
 
 
-
+    def player_pawns_on_board(self, game):
+        counter = 0
+        for i in self.fields:
+            if i == game.current_player.color:
+                counter = counter + 1
+        return counter
 
 
 
