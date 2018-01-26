@@ -35,20 +35,42 @@ def play():
 @app.route('/add')
 def add():
     a = request.args.get('a', 24, type=int)
-    if game.board.take_the_field(game.current_player.color, a, game) == True:
-        print("ilość pionków playera na plaszy ", game.board.player_pawns_on_board(game))
-        if game.board.player_pawns_on_board(game) <= 9:
-            # if game.board.have_mills(game):
-            #     print("zabrałam pionek przeciwnika")
+    b = request.args.get('b', 24, type = int)
+    print("ilość pionków playera na plaszy przed ruchem ", game.board.player_pawns_on_board(game))
+    print("czy prawdą jest że mam wolny pionek: ",game.pawns.if_is_free_pawn())
+    print("statusy pionków przed ruchem ", game.current_player.pawns.player_pawns)
+    if (game.board.player_pawns_on_board(game) <= 9 and game.current_player.pawns.if_is_free_pawn() is True):
+        #jeśli pionków gracza na plaszy jest mniej niż 9 to dostawiaj pionki
+        # game.pawns.player_pawns[game.board.player_pawns_on_board(game)] = 'on_board'
+        if game.board.take_the_field(game.current_player.color, a, game) is True:
+            #jeśli udało się zająć pole (nie było ono już wcześniej zajęte)
+            print("ilość pionków playera na plaszy po ruchu", game.board.player_pawns_on_board(game))
+            print("statusy pionków po ruchu ", game.current_player.pawns.player_pawns)
+
+            # if game.board.take_enemy_pawn(game.current_player.color, b, game):
+            #     print("udało ci się zabrać pionek przeciwnika")
             # else:
-            #     return False
-            current_color = game.current_player.color
+            #     print("nie udało ci sie zabrać pionka przeciwnika")
+
+
+
+
+            if game.board.have_mills(a, game) == True:
+                print("zabrałam pionek przeciwnika")
+                # return True
+            else:
+                print("nie możesz zabrać pionka przeciwnka")
+                # return False
+
+            # current_color = game.current_player.color
             game.change_player()
         else:
-            print("nie masz więcej pionków")
-            return False
+            # current_color = game.current_player.color
+            print("to pole jest już zajęte, wybierz inne")
+            # return False
     else:
-        return False
+        print("nie masz więcej pionków")
+        # return False
 
 
         # current_player = game.current_player
@@ -58,21 +80,8 @@ def add():
 
     # board = game.board
 
-    return jsonify(result = current_color)
+    return jsonify(result = game.second_player.color)
 
-
-# @app.route('/background_process')
-# def background_process():
-#     try:
-#         lang = request.args.get('move_to', 0, type=str)
-#         if lang.lower() == 'python':
-#             print("you are wise")
-#             # return jsonify(result='You are wise')
-#         else:
-#             # return jsonify(result='Try again.')
-#             print("or not")
-#     except Exception as e:
-#         return str(e)
 
 @app.route('/rules')
 def rules(): pass

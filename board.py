@@ -64,6 +64,7 @@ class Board:
     def take_the_field(self, color, field_to, game):
         if self.is_field_empty(field_to):
             self.fields[field_to] = game.current_player.color
+            game.current_player.pawns.player_pawns[self.player_pawns_on_board(game) - 1] = 'on_board'
             return True
         else:
             return False
@@ -79,6 +80,21 @@ class Board:
             return False
 
 
+    def take_enemy_pawn(self, color, field_to, game):
+        if self.is_field_enemys(field_to, game):
+            self.fields[field_to] = 'F'
+            game.pawns.player_pawns[self.player_pawns_on_board(game) - 1] = 'lost'
+            return True
+        else:
+            return False
+
+
+    def is_field_enemys(self, remove_field, game):
+        if self.fields[remove_field] == game.current_player.color:
+            return True
+        else:
+            return False
+
     def player_pawns_on_board(self, game):
         counter = 0
         for i in self.fields:
@@ -86,65 +102,132 @@ class Board:
                 counter = counter + 1
         return counter
 
-    def have_mills(self,game):
+    def have_mills(self, field_to, game):
         color = game.current_player.color
-        if self.fields[0] == color and self.fields[1] == color and self.fields[2] == color:
+        if self.fields[field_to] == self.fields[0] and ((self.fields[1] == color and self.fields[2] == color) or (self.fields[9] == color and self.fields[21] == color)):
             print("zabierz pionek przeciwnka")
             return True
-        if self.fields[3] == color and self.fields[4] == color and self.fields[5] == color:
+        if self.fields[field_to] == self.fields[1] and ((self.fields[0] == color and self.fields[2] == color) or (self.fields[4] == color and self.fields[7] == color)):
             print("zabierz pionek przeciwnka")
             return True
-        if self.fields[6] == color and self.fields[7] == color and self.fields[8] == color:
+        if self.fields[field_to] == self.fields[2] and ((self.fields[0] == color and self.fields[1] == color) or (self.fields[14] == color and self.fields[23] == color)):
             print("zabierz pionek przeciwnka")
             return True
-        if self.fields[9] == color and self.fields[10] == color and self.fields[11] == color:
+        if self.fields[field_to] == self.fields[3] and ((self.fields[4] == color and self.fields[5] == color) or (self.fields[10] == color and self.fields[18] == color)):
             print("zabierz pionek przeciwnka")
             return True
-        if self.fields[12] == color and self.fields[13] == color and self.fields[14] == color:
+        if self.fields[field_to] == self.fields[4] and ((self.fields[3] == color and self.fields[5] == color) or (self.fields[1] == color and self.fields[7] == color)):
             print("zabierz pionek przeciwnka")
             return True
-        if self.fields[15] == color and self.fields[16] == color and self.fields[17] == color:
+        if self.fields[field_to] == self.fields[5] and ((self.fields[3] == color and self.fields[4] == color) or (self.fields[13] == color and self.fields[20] == color)):
             print("zabierz pionek przeciwnka")
             return True
-        if self.fields[18] == color and self.fields[19] == color and self.fields[20] == color:
+        if self.fields[field_to] == self.fields[6] and ((self.fields[7] == color and self.fields[8] == color) or (self.fields[11] == color and self.fields[19] == color)):
             print("zabierz pionek przeciwnka")
             return True
-        if self.fields[21] == color and self.fields[22] == color and self.fields[23] == color:
+        if self.fields[field_to] == self.fields[7] and ((self.fields[6] == color and self.fields[8] == color) or (self.fields[1] == color and self.fields[4] == color)):
             print("zabierz pionek przeciwnka")
             return True
-        if self.fields[0] == color and self.fields[9] == color and self.fields[21] == color:
+        if self.fields[field_to] == self.fields[8] and ((self.fields[6] == color and self.fields[7] == color) or (self.fields[12] == color and self.fields[17] == color)):
             print("zabierz pionek przeciwnka")
             return True
-        if self.fields[3] == color and self.fields[10] == color and self.fields[18] == color:
+        if self.fields[field_to] == self.fields[9] and ((self.fields[10] == color and self.fields[11] == color) or (self.fields[0] == color and self.fields[21] == color)):
             print("zabierz pionek przeciwnka")
             return True
-        if self.fields[6] == color and self.fields[11] == color and self.fields[15] == color:
+        if self.fields[field_to] == self.fields[10] and ((self.fields[11] == color and self.fields[9] == color) or (self.fields[3] == color and self.fields[18] == color)):
             print("zabierz pionek przeciwnka")
             return True
-        if self.fields[1] == color and self.fields[4] == color and self.fields[7] == color:
+        if self.fields[field_to] == self.fields[11] and ((self.fields[6] == color and self.fields[15] == color) or (self.fields[9] == color and self.fields[10] == color)):
             print("zabierz pionek przeciwnka")
             return True
-        if self.fields[16] == color and self.fields[19] == color and self.fields[22] == color:
+        if self.fields[field_to] == self.fields[12] and ((self.fields[13] == color and self.fields[14] == color) or (self.fields[8] == color and self.fields[17] == color)):
             print("zabierz pionek przeciwnka")
             return True
-        if self.fields[8] == color and self.fields[12] == color and self.fields[17] == color:
+        if self.fields[field_to] == self.fields[13] and ((self.fields[12] == color and self.fields[14] == color) or (self.fields[5] == color and self.fields[20] == color)):
             print("zabierz pionek przeciwnka")
             return True
-        if self.fields[5] == color and self.fields[13] == color and self.fields[20] == color:
+        if self.fields[field_to] == self.fields[14] and ((self.fields[2] == color and self.fields[23] == color) or (self.fields[12] == color and self.fields[13] == color)):
             print("zabierz pionek przeciwnka")
             return True
-        if self.fields[2] == color and self.fields[14] == color and self.fields[23] == color:
+        if self.fields[field_to] == self.fields[15] and ((self.fields[6] == color and self.fields[11] == color) or (self.fields[16] == color and self.fields[17] == color)):
             print("zabierz pionek przeciwnka")
             return True
-        else:
-            return False
+        if self.fields[field_to] == self.fields[16] and ((self.fields[15] == color and self.fields[17] == color) or (self.fields[19] == color and self.fields[22] == color)):
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[field_to] == self.fields[17] and ((self.fields[8] == color and self.fields[12] == color) or (self.fields[15] == color and self.fields[16] == color)):
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[field_to] == self.fields[18] and ((self.fields[19] == color and self.fields[20] == color) or (self.fields[3] == color and self.fields[10] == color)):
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[field_to] == self.fields[19] and ((self.fields[18] == color and self.fields[20] == color) or (self.fields[16] == color and self.fields[22] == color)):
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[field_to] == self.fields[20] and ((self.fields[18] == color and self.fields[19] == color) or (self.fields[5] == color and self.fields[13] == color)):
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[field_to] == self.fields[21] and ((self.fields[0] == color and self.fields[9] == color) or (self.fields[22] == color and self.fields[23] == color)):
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[field_to] == self.fields[22] and ((self.fields[21] == color and self.fields[23] == color) or (self.fields[16] == color and self.fields[19] == color)):
+            print("zabierz pionek przeciwnka")
+            return True
+        if self.fields[field_to] == self.fields[23] and ((self.fields[21] == color and self.fields[22] == color) or (self.fields[2] == color and self.fields[14] == color)):
+            print("zabierz pionek przeciwnka")
+            return True
 
-
-
-
-
-
-
+        # if self.fields[0] == color and self.fields[1] == color and self.fields[2] == color:
+        #     # self.take_enemy_pawn(color, field_to, game)
+        #     print("zabierz pionek przeciwnka")
+        #     return True
+        # if self.fields[3] == color and self.fields[4] == color and self.fields[5] == color:
+        #     print("zabierz pionek przeciwnka")
+        #     return True
+        # if self.fields[6] == color and self.fields[7] == color and self.fields[8] == color:
+        #     print("zabierz pionek przeciwnka")
+        #     return True
+        # if self.fields[9] == color and self.fields[10] == color and self.fields[11] == color:
+        #     print("zabierz pionek przeciwnka")
+        #     return True
+        # if self.fields[12] == color and self.fields[13] == color and self.fields[14] == color:
+        #     print("zabierz pionek przeciwnka")
+        #     return True
+        # if self.fields[15] == color and self.fields[16] == color and self.fields[17] == color:
+        #     print("zabierz pionek przeciwnka")
+        #     return True
+        # if self.fields[18] == color and self.fields[19] == color and self.fields[20] == color:
+        #     print("zabierz pionek przeciwnka")
+        #     return True
+        # if self.fields[21] == color and self.fields[22] == color and self.fields[23] == color:
+        #     print("zabierz pionek przeciwnka")
+        #     return True
+        # if self.fields[0] == color and self.fields[9] == color and self.fields[21] == color:
+        #     print("zabierz pionek przeciwnka")
+        #     return True
+        # if self.fields[3] == color and self.fields[10] == color and self.fields[18] == color:
+        #     print("zabierz pionek przeciwnka")
+        #     return True
+        # if self.fields[6] == color and self.fields[11] == color and self.fields[15] == color:
+        #     print("zabierz pionek przeciwnka")
+        #     return True
+        # if self.fields[1] == color and self.fields[4] == color and self.fields[7] == color:
+        #     print("zabierz pionek przeciwnka")
+        #     return True
+        # if self.fields[16] == color and self.fields[19] == color and self.fields[22] == color:
+        #     print("zabierz pionek przeciwnka")
+        #     return True
+        # if self.fields[8] == color and self.fields[12] == color and self.fields[17] == color:
+        #     print("zabierz pionek przeciwnka")
+        #     return True
+        # if self.fields[5] == color and self.fields[13] == color and self.fields[20] == color:
+        #     print("zabierz pionek przeciwnka")
+        #     return True
+        # if self.fields[2] == color and self.fields[14] == color and self.fields[23] == color:
+        #     print("zabierz pionek przeciwnka")
+        #     return True
+        # else:
+        #     return False
 
 
 

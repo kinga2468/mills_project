@@ -2,7 +2,7 @@ class Pawns():
     """klasa defuniująca pionki oraz ich funkcje"""
 
     def __init__(self):
-        self.player_pawns = ['free', 'free', 'free', 'free', 'free', 'free', 'free', 'free', 'free']
+        self.player_pawns = ['free', 'free', 'free', 'free', 'free', 'free', 'free', 'free', 'free'] # pionki mogą być free, on_board, lost
         self.free = []
 
     def is_pawn_free(self, pawn_nr):
@@ -16,4 +16,10 @@ class Pawns():
             if x == 'free':
                 self.free.append(x)
         return len(self.free)
+
+    def if_is_free_pawn(self):
+        if 'free' in self.player_pawns:
+            return True
+        else:
+            return False
 

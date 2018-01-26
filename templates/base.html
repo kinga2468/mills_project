@@ -26,6 +26,21 @@
             return false;
             });
         });
+        $(function() {
+            $('a#wyslij2').bind('click', function() {
+                $.getJSON($SCRIPT_ROOT + '/add', {
+                    b: $('input[name="b"]').val()
+                 }, function(data) {
+                    var y = $('input[name="b"]').val();
+                    $('#p'+y).removeClass(data.result2);
+                  });
+            return false;
+            });
+        });
+        {#function hide_form_1(){#}
+        {#    $('#postaw').css('opacity', '0');#}
+        {##}
+
     </script>
 
 </head>

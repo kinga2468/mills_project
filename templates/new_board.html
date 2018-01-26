@@ -6,9 +6,16 @@
             <h1>Młynek</h1>
             <div class="obecnie_add">
                 <p>Obecnie gra: {{ current_player.color }} i ma {{ current_player.pawns.how_many_free_pawns() }} pionków</p>
-                <h2>Postaw pionek</h2>
-                <p><input type=text size=5 name=a>
-                <p><a href=# id=wyslij><button>Wyślij</button></a>
+                <form id="postaw">
+                    <h2>Postaw pionek</h2>
+                    <p><input type=text size=5 name=a>
+                    <p><a href=# id=wyslij><button>Wyślij</button></a>
+                </form>
+                <form id="zabierz">
+                    <h2>Zabierz pionek przeciwnika</h2>
+                    <p><input type=text size=5 name=b>
+                    <p><a href=# id=wyslij2><button>Wyślij</button></a>
+                </form>
             </div>
         </header>
         <div class="center">
