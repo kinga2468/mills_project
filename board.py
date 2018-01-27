@@ -80,7 +80,7 @@ class Board:
             return False
 
 
-    def take_enemy_pawn(self, color, field_to, game):
+    def take_enemy_pawn(self, field_to, game):
         if self.is_field_enemys(field_to, game):
             self.fields[field_to] = 'F'
             game.pawns.player_pawns[self.player_pawns_on_board(game) - 1] = 'lost'
@@ -105,22 +105,22 @@ class Board:
     def have_mills(self, field_to, game):
         color = game.current_player.color
         if self.fields[field_to] == self.fields[0] and ((self.fields[1] == color and self.fields[2] == color) or (self.fields[9] == color and self.fields[21] == color)):
-            print("zabierz pionek przeciwnka")
+            print("zabierz pionek przeciwnka1")
             return True
         if self.fields[field_to] == self.fields[1] and ((self.fields[0] == color and self.fields[2] == color) or (self.fields[4] == color and self.fields[7] == color)):
-            print("zabierz pionek przeciwnka")
+            print("zabierz pionek przeciwnka2")
             return True
         if self.fields[field_to] == self.fields[2] and ((self.fields[0] == color and self.fields[1] == color) or (self.fields[14] == color and self.fields[23] == color)):
-            print("zabierz pionek przeciwnka")
+            print("zabierz pionek przeciwnka3")
             return True
         if self.fields[field_to] == self.fields[3] and ((self.fields[4] == color and self.fields[5] == color) or (self.fields[10] == color and self.fields[18] == color)):
-            print("zabierz pionek przeciwnka")
+            print("zabierz pionek przeciwnka4")
             return True
         if self.fields[field_to] == self.fields[4] and ((self.fields[3] == color and self.fields[5] == color) or (self.fields[1] == color and self.fields[7] == color)):
-            print("zabierz pionek przeciwnka")
+            print("zabierz pionek przeciwnka5")
             return True
         if self.fields[field_to] == self.fields[5] and ((self.fields[3] == color and self.fields[4] == color) or (self.fields[13] == color and self.fields[20] == color)):
-            print("zabierz pionek przeciwnka")
+            print("zabierz pionek przeciwnka6")
             return True
         if self.fields[field_to] == self.fields[6] and ((self.fields[7] == color and self.fields[8] == color) or (self.fields[11] == color and self.fields[19] == color)):
             print("zabierz pionek przeciwnka")
@@ -229,7 +229,21 @@ class Board:
         # else:
         #     return False
 
+    def move(self, field_from, field_to, game):
+        if field_to in self.field_to_possible(field_from):
+            self.fields[field_from] = 'F'
+            self.fields[field_to] = game.current_player.color
+            print("ruch został wykonany")
+            return True
+        else:
+            return False
+
+    def field_to_possible(self, field_from):
+        return self.neighbors[field_from]
 
 
-
-
+    def if_pawn_to_move_is_yours(self, field_from, game):
+        if self.fields[field_from] == game.current_player.color:
+            return True
+        else:
+            return False

@@ -17,8 +17,8 @@ class Pawns():
                 self.free.append(x)
         return len(self.free)
 
-    def if_is_free_pawn(self):
-        if 'free' in self.player_pawns:
+    def if_is_free_pawn(self, game):
+        if 'free' in game.current_player.pawns.player_pawns:
             return True
         else:
             return False
