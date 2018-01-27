@@ -37,6 +37,7 @@ def add():
     # current_color = game.current_player.color
     print("ilość pionków playera na plaszy przed ruchem ", game.board.player_pawns_on_board(game))
     print("czy prawdą jest że mam wolny pionek: ",game.pawns.if_is_free_pawn(game))
+    amount = game.board.player_pawns_on_board(game)
     print("statusy pionków przed ruchem ", game.current_player.pawns.player_pawns)
     if (game.board.player_pawns_on_board(game) <= 9 and game.current_player.pawns.if_is_free_pawn(game) is True):
         a = request.args.get('a', 24, type=int)
@@ -89,7 +90,7 @@ def add():
 
     # board = game.board
     print("parametr amount do przekazania to :",game.board.player_pawns_on_board(game))
-    return jsonify(result = game.second_player.color, second_player = game.current_player.color, amount = game.board.player_pawns_on_board(game))
+    return jsonify(result = game.second_player.color, second_player = game.current_player.color, amount = amount)
 
 @app.route('/remove')
 def remove():
