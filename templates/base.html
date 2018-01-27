@@ -20,7 +20,9 @@
                 $.getJSON($SCRIPT_ROOT + '/add', {
                     a: $('input[name="a"]').val()
                  }, function(data) {
+
                     var x = $('input[name="a"]').val();
+                    $('#obecnie_gra').text(data.second_player);
                     $('#p'+x).addClass(data.result);
                   });
             return false;
@@ -37,10 +39,31 @@
             return false;
             });
         });
-        {#function hide_form_1(){#}
-        {#    $('#postaw').css('opacity', '0');#}
-        {##}
-
+        $(function() {
+            $('a#wyslij3').bind('click', function() {
+                $.getJSON($SCRIPT_ROOT + '/add', {
+                    c: $('input[name="c"]').val(),
+                    d: $('input[name="d"]').val()
+                 }, function(data) {
+                    var u = $('input[name="c"]').val();
+                    var y = $('input[name="d"]').val();
+                    $('#obecnie_gra').text(data.second_player);
+                    $('#p'+u).removeClass(data.result);
+                    $('#p'+y).addClass(data.result);
+                  });
+            return false;
+            });
+        });
+        {#$(function hide_form_1() {#}
+        {#    $.getJSON($SCRIPT_ROOT + '/add',#}
+        {#        function() {#}
+        {#        $('#postaw').css('opacity', '0');#}
+        {#    });#}
+        {#    return false;#}
+        {#if(show_form === 1){#}
+        {#    function hide_form_1(){#}
+        {#        $('#postaw').css('opacity', '0');#}
+        {#    }#}
     </script>
 
 </head>

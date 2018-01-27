@@ -5,7 +5,7 @@
             <a title="Wróć do menu" href="{{ url_for('start') }}"><span class="fas fa-arrow-alt-circle-left"></span></a>
             <h1>Młynek</h1>
             <div class="obecnie_add">
-                <p>Obecnie gra: {{ current_player.color }} i ma {{ current_player.pawns.how_many_free_pawns() }} pionków</p>
+                <p>Obecnie gra: </p><p id="obecnie_gra">{{ current_player.color }}</p>
                 <form id="postaw">
                     <h2>Postaw pionek</h2>
                     <p><input type=text size=5 name=a>
@@ -15,6 +15,14 @@
                     <h2>Zabierz pionek przeciwnika</h2>
                     <p><input type=text size=5 name=b>
                     <p><a href=# id=wyslij2><button>Wyślij</button></a>
+                </form>
+                <form id="przesun">
+                    <h2>Przesuń swój pionek</h2>
+                    <p>Z pola: </p>
+                    <p><input type=text size=5 name=c>
+                    <p>Na pole: </p>
+                    <p><input type=text size=5 name=d>
+                    <p><a href=# id=wyslij3><button>Wyślij</button></a>
                 </form>
             </div>
         </header>

@@ -51,9 +51,6 @@ def add():
             # else:
             #     print("nie udało ci sie zabrać pionka przeciwnika")
 
-
-
-
             if game.board.have_mills(a, game) == True:
                 # b = request.args.get('b', 24, type=int)
                 # game.board.take_enemy_pawn(b, game)
@@ -64,10 +61,8 @@ def add():
                 print("nie możesz zabrać pionka przeciwnka")
                 # return False
 
-            current_color = game.current_player.color
             game.change_player()
         else:
-            # current_color = game.current_player.color
             print("to pole jest już zajęte, wybierz inne")
             # return False
     elif (game.board.player_pawns_on_board(game) > 3 and game.current_player.pawns.if_is_free_pawn(game) is False):
@@ -76,11 +71,10 @@ def add():
         if (game.board.if_pawn_to_move_is_yours(c, game) and game.board.is_field_empty(d)):
             game.board.move(c, d, game)
             print("wykonałem ruch z pola :", c,"na pole :", d)
-            current_color = game.current_player.color
             game.change_player()
         else:
             print("nie można wykonać tego ruchu ")
-
+            return False
         # print("moje możliwe ruchy to :", game.board.field_to_possible(8))
     else:
         print("nie masz więcej pionków")
@@ -89,12 +83,13 @@ def add():
 
         # current_player = game.current_player
     # print("zajął pole ", a)
+    # print("przed chwilą grał ", current_color)
     print("teraz będzie grał ", game.current_player.color)
     print("plansza wygląda tak3 ", game.board.fields)
 
     # board = game.board
 
-    return jsonify(result = game.second_player.color, second_player = current_color)
+    return jsonify(result = game.second_player.color, second_player = game.current_player.color)
 
 @app.route('/remove')
 def remove():
