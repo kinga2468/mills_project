@@ -5,19 +5,28 @@ body{font-family: 'Lato', sans-serif;
     background-color: #cccccc;}
 .background{background-image: url('images/tło.png'); background-repeat: repeat-x;}
 
-header{color:#FF7DFB; font-family: 'Dancing Script', sans-serif;  margin-left:30px;}
-header form{margin-left: 30px;}
-header p {margin-top:5px;}
-.obecnie_add p{font-size: 1em; margin:5px 10px;}
-.obecnie_add h2{font-size: 1em; margin:5px 10px;}
-.obecnie_add input{width:90px;}
-.obecnie_add form{ position: relative; left:-30px;}
+header {color:#FF7DFB; font-family: 'Dancing Script', sans-serif; position: relative; bottom: 220px;}
+
+.obecnie_add {width:100%; margin:0 20px;}
+.obecnie_add h2{font-size: 1em; display: inline-block; width:40%; float: left; margin:10px 0;}
+#obecnie_gra{display: inline-block; width:30%; float: left; position: relative; top:16px; left:12px;}
+.obecnie_add p {font-size: 0.8em; font-weight: bold;}
+
+.formularz{clear: both; width:100%;}
+.formularz h2{width:100%;}
+.formularz input{width:90px; margin-bottom: 12px; margin-right:12px;}
+.formularz button{background-color: #A9A3FF; border: none; padding: 5px 8px; font-family: 'Shadows Into Light', sans-serif; font-size:0.5em;
+    font-weight: bold; }
+
+.przesun {width:30%; float: left;}
+#wyslij3{position: relative; top:30px;}
+
 .background header{text-align: center; font-size:3.5em; margin:20px;}
 .body_board header{font-size: 2.0em; color: #FF7DFB; display: inline-block; width:25%;
     height: 100%; }
 .body_board h1{display: inline-block; width:80%; height: 100px;}
 .body_board .fas {color: #FF7DFB; display: inline-block; width:10%; height: 40px; margin: 0 15px 10px 10px; position: relative; bottom:5px;}
-.center{display: inline-block; width:70%; height:100%; }
+.center{display: inline-block; width:70%; height:100%; margin:0; padding:0;}
 
 .main-container{margin-top:80px;}
 .button_main_page{margin:20px 0;}
@@ -29,15 +38,15 @@ header p {margin-top:5px;}
 .player .name{width:15%; height:40px; background-color: #FBFFD9; display: inline-block; position: relative; bottom:5px; left:120px;}
 .player .name p {text-align: center; font-size: 1.6em; font-family: 'Shadows Into Light', sans-serif; /*border: 2px solid #9a9aa0;*/}
 .player .pawns{display: inline-block;  width:auto; position: relative; left:100px; top: 10px;}
-#e0 {position:relative; left:10px; }
-#e1 {position:relative; left:90px;}
-#e2 {position:relative; left:170px;}
-#e3 {position:relative; left:250px;}
-#e4 {position:relative; left:330px;}
-#e5 {position:relative; left:410px;}
-#e6 {position:relative; left:490px;}
-#e7 {position:relative; left:570px;}
-#e8 {position:relative; left:650px}
+.e0 {position:relative; left:10px; }
+.e1 {position:relative; left:90px;}
+.e2 {position:relative; left:170px;}
+.e3 {position:relative; left:250px;}
+.e4 {position:relative; left:330px;}
+.e5 {position:relative; left:410px;}
+.e6 {position:relative; left:490px;}
+.e7 {position:relative; left:570px;}
+.e8 {position:relative; left:650px}
 
 .board {width: 500px; height: 500px; background-image: url('images/plansza2.png'); background-repeat: no-repeat;
     background-size: 500px 500px; margin:30px auto 0;}

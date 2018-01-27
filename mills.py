@@ -88,8 +88,8 @@ def add():
     print("plansza wygląda tak3 ", game.board.fields)
 
     # board = game.board
-
-    return jsonify(result = game.second_player.color, second_player = game.current_player.color)
+    print("parametr amount do przekazania to :",game.board.player_pawns_on_board(game))
+    return jsonify(result = game.second_player.color, second_player = game.current_player.color, amount = game.board.player_pawns_on_board(game))
 
 @app.route('/remove')
 def remove():

@@ -20,10 +20,11 @@
                 $.getJSON($SCRIPT_ROOT + '/add', {
                     a: $('input[name="a"]').val()
                  }, function(data) {
-
+                    var amount = data.amount;
                     var x = $('input[name="a"]').val();
                     $('#obecnie_gra').text(data.second_player);
                     $('#p'+x).addClass(data.result);
+                    $('.e'+amount).removeClass(data.result);
                   });
             return false;
             });

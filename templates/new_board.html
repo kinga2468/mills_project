@@ -1,28 +1,40 @@
 {% extends "base.html" %}
 {% block body %}
     <div class="body_board">
+
+
+
+
+
+
+
+
         <header>
             <a title="Wróć do menu" href="{{ url_for('start') }}"><span class="fas fa-arrow-alt-circle-left"></span></a>
             <h1>Młynek</h1>
             <div class="obecnie_add">
-                <p>Obecnie gra: </p><p id="obecnie_gra">{{ current_player.color }}</p>
-                <form id="postaw">
+                <h2>Obecnie gra: </h2><p id="obecnie_gra">{{ current_player.color }}</p>
+                <form class="formularz">
                     <h2>Postaw pionek</h2>
-                    <p><input type=text size=5 name=a>
-                    <p><a href=# id=wyslij><button>Wyślij</button></a>
+                    <input type=text size=5 name=a>
+                    <a href=# id=wyslij><button>Wykonaj</button></a>
                 </form>
-                <form id="zabierz">
+                <form class="formularz">
                     <h2>Zabierz pionek przeciwnika</h2>
-                    <p><input type=text size=5 name=b>
-                    <p><a href=# id=wyslij2><button>Wyślij</button></a>
+                    <input type=text size=5 name=b>
+                    <a href=# id=wyslij2><button>Wykonaj</button></a>
                 </form>
-                <form id="przesun">
+                <form class="formularz">
                     <h2>Przesuń swój pionek</h2>
-                    <p>Z pola: </p>
-                    <p><input type=text size=5 name=c>
-                    <p>Na pole: </p>
-                    <p><input type=text size=5 name=d>
-                    <p><a href=# id=wyslij3><button>Wyślij</button></a>
+                    <div class="przesun">
+                        <p>Z pola: </p>
+                        <input type=text size=5 name=c>
+                    </div>
+                    <div class="przesun">
+                        <p>Na pole: </p>
+                        <input type=text size=5 name=d>
+                    </div>
+                    <a href=# id=wyslij3><button>Wykonaj</button></a>
                 </form>
             </div>
         </header>
@@ -32,15 +44,15 @@
                     <p> green </p>
                 </div>
                 <div class = pawns>
-                    <div class="field green" id="e8"></div>
-                    <div class="field green" id="e7"></div>
-                    <div class="field green" id="e6"></div>
-                    <div class="field green" id="e5"></div>
-                    <div class="field green" id="e4"></div>
-                    <div class="field green" id="e3"></div>
-                    <div class="field green" id="e2"></div>
-                    <div class="field green" id="e1"></div>
-                    <div class="field green" id="e0"></div>
+                    <div class="field green e8"></div>
+                    <div class="field green e7"></div>
+                    <div class="field green e6"></div>
+                    <div class="field green e5"></div>
+                    <div class="field green e4"></div>
+                    <div class="field green e3"></div>
+                    <div class="field green e2"></div>
+                    <div class="field green e1"></div>
+                    <div class="field green e0"></div>
                 </div>
             </article>
             <article class = "board_container">
@@ -76,15 +88,15 @@
                     <p> pink </p>
                 </div>
                 <div class = pawns>
-                    <div class="field pink" id="e8"></div>
-                    <div class="field pink" id="e7"></div>
-                    <div class="field pink" id="e6"></div>
-                    <div class="field pink" id="e5"></div>
-                    <div class="field pink " id="e4"></div>
-                    <div class="field pink" id="e3"></div>
-                    <div class="field pink" id="e2"></div>
-                    <div class="field pink" id="e1"></div>
-                    <div class="field pink" id="e0"></div>
+                    <div class="field pink e8"></div>
+                    <div class="field pink e7"></div>
+                    <div class="field pink e6"></div>
+                    <div class="field pink e5"></div>
+                    <div class="field pink e4"></div>
+                    <div class="field pink e3"></div>
+                    <div class="field pink e2"></div>
+                    <div class="field pink e1"></div>
+                    <div class="field pink e0"></div>
                 </div>
             </article>
         </div>
